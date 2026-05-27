@@ -3,6 +3,14 @@
 Generate 3D models of aruco markers to 3D print. Renders the aruco as
 a square box with grooves for the black squares.
 
+## Quickstart
+
+If you have `uv` installed, this tool can be used very quickly:
+
+```bash
+uvx --refresh --python 3.9 --from git+https://github.com/ASDL-Robotics/3D-aruco-generator aruco3d-generator --box_side 120 --marker_margin 10 --box_thickness 2 --marker_groove_depth 1 --aruco_dictionary DICT_6X6_50 --marker_id 1 --layer_height 0.2
+```
+
 ## Requirements
 
 The recommended way to install the requirements is to use a virtual environment:
