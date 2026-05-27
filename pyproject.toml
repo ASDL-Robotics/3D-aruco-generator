@@ -1,0 +1,25 @@
+[project]
+name = "aruco3d-generator"
+version = "0.1.0"
+description = "Generate 3D models of aruco markers to 3D print"
+readme = "README.md"
+requires-python = "<=3.9"
+license = "AGPL-3.0-only"
+authors = [
+  { name = "Ignacio Montesino Valle", email = "monte.igna@gmail.com" },
+]
+dependencies = [
+    "cadquery==2.2.0",
+    "opencv_python>=4.7.0.71,<5",
+    "numpy==1.23.5",
+]
+
+[tool.hatch.build.targets.wheel]
+src = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+aruco3d-generator = "aruco3d_generator.generate_aruco:main"
