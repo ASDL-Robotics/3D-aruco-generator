@@ -287,21 +287,21 @@ def main():
 
     # Add a magnet inset
     dist_to_indent = card_side/2-card_margin/2
-    if magnet_inset_radius is not None:
-        print("Adding magnet inset")
-        indent_positions = [
-            (dist_to_indent, dist_to_indent),
-            (-dist_to_indent, -dist_to_indent),
-            (dist_to_indent, -dist_to_indent),
-            (-dist_to_indent, dist_to_indent),
-        ]
-        obj = obj.faces("<Z").workplane().pushPoints(indent_positions).circle(magnet_inset_radius).cutBlind(-layer_height)
+    #if magnet_inset_radius is not None:
+    #    print("Adding magnet inset")
+    #    indent_positions = [
+    #        (dist_to_indent, dist_to_indent),
+    #        (-dist_to_indent, -dist_to_indent),
+    #        (dist_to_indent, -dist_to_indent),
+    #        (-dist_to_indent, dist_to_indent),
+    #    ]
+    #    obj = obj.faces("<Z").workplane().pushPoints(indent_positions).circle(magnet_inset_radius).cutBlind(-layer_height)
 
     # Add the number if the marher in the bottom
-    obj = obj.faces("<Z").workplane().center(0.0, -dist_to_indent).text(str(marker_id), card_margin*0.7, -layer_height, combine='cut')
+    # obj = obj.faces("<Z").workplane().center(0.0, -dist_to_indent).text(str(marker_id), card_margin*0.7, -layer_height, combine='cut')
 
     # Add the dictionary name in the bottom
-    obj = obj.faces("<Z").workplane().center(0.0, dist_to_indent*2).transformed(rotate=(0,0,180)).text(marker_type, card_margin*0.5, -layer_height, combine='cut')
+    # obj = obj.faces("<Z").workplane().center(0.0, dist_to_indent*2).transformed(rotate=(0,0,180)).text(marker_type, card_margin*0.5, -layer_height, combine='cut')
 
     obj.val().exportStl(FILENAME+'.stl', ascii=True)
 
